@@ -18,5 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', include('doGTDProcess.urls')),
     url(r'^collect/', include('doGTDCollect.urls')),
+    url(r'^process/', include('doGTDProcess.urls')),
+    url(r'^daily/', include('doGTDDailyReview.urls')),
+    url(r'^weekly/', include('doGTDWeeklyReview.urls')),
 ]
