@@ -24,42 +24,40 @@
                   <center>
                     <img src="{% static 'doGTDCollect/img/profile.jpg' %}" class="responsive-img" style='max-height:100px;' alt="face">
                   </center>
-              </div>
+              </div> <!--col-sm-2-->
               <div class="col-sm-10">
                   <br>
                   <center>
                   <h3>GTD System - Collect App</h3>
                   </center>
-              </div>
-        </div><hr>
+              </div> <!--col-sm-10-->
+        </div><hr> <!--row-->
 
         <div class="row">
           <div class="col-sm-2">
-          <br>
-
-          <br>
-           <!-- Great, til you resize. -->
-            <!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
-            <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href='/process/dashboard'>Dashboard</a></li>
-                <li><a href='/collect/'>Collect</a></li>
-                <li><a href='/process/'>Process</a></li>
-                <li><a href='/daily/'>Daily Review</a></li>
-                <li><a href='/weekly/'>Weekly Review</a></li>
-              </ul>
-            </div> <!--well bs-sidebar affix-->
+            <br>
+                <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
+                  <ul class="nav nav-pills nav-stacked">
+                    <li><a href='/process/dashboard'>Dashboard</a></li>
+                    <li><a href='/collect/'>Collect</a></li>
+                    <li><a href='/process/'>Process</a></li>
+                    <li><a href='/daily/'>Daily Review</a></li>
+                    <li><a href='/weekly/'>Weekly Review</a></li>
+                  </ul>
+                </div> <!--well bs-sidebar affix-->
+                
           </div> <!--col-sm-2-->
           <div class="col-sm-10">
           
             <div class='container-fluid'>
-            <br><br>
+            
                {% block content %}
                {% endblock %}   
-            </div>
-          </div>
-        </div> 
-    </div>
+               
+            </div> <!--inner page-->
+          </div> <!--col-sm-10-->
+        </div> <!--row-->
+    </div> <!--outer page-->
     <footer>
         <div class="container-fluid" style='margin-left:15px'>
             <p><a href="/collect/contact">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>

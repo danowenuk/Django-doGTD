@@ -1,0 +1,12 @@
+{% extends "doGTDCollect/header.html" %}
+
+{% block content %}
+
+    <a class="btn btn-default" href="{% url 'action_edit' pk=action.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    
+    <h3>{{action.title}}</h3>
+    <h6>on {{action.date}}</h6>
+    {{action.description|safe|linebreaks}}
+    Contexts: {{ action.context }}
+
+{% endblock %}
