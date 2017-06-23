@@ -4,6 +4,7 @@ from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 from .forms import ActionForm
 from .models import Action
+import time
 
 def simple(request):
     return HttpResponse("<h2>Simple HTML page</h2>")
@@ -19,7 +20,10 @@ def action_new(request):
             action.save()
             return redirect('/process')
     else:
-        form = ActionForm()
+        form = ActionForm(initial={'date':time.strftime("%Y-%m-%d %H:%M:%S"),
+                                   'title':'Testing action @ ' + time.strftime("%H:%M:%S"),
+                                   'description': 'some default initial value'
+                                   ,'context':'phone'})
     return render(request, 'doGTDProcess/action_edit.html', {'form': form})
 
 def action_edit(request, pk):
@@ -29,7 +33,7 @@ def action_edit(request, pk):
         if form.is_valid():
             action = form.save(commit=False)
             action.save()
-            return redirect('action_detail', pk=action.pk)
+            return redirect('/process/' + pk)
     else:
         form = ActionForm(instance=action)
     return render(request, 'doGTDProcess/action_edit.html', {'form': form})
